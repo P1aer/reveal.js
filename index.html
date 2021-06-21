@@ -4,20 +4,211 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>OOP in JS</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
 
 		<!-- Theme used for syntax highlighted code -->
+
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					## OOP in JS
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Object-oriented programming
+						is a programming paradigm based on the concept of "objects",
+						which can contain data and code: data in the form of fields,
+						and code, in the form of procedures.
+					</textarea>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+						## Magic of number 4
+						There are four core principles in object-oriented programming.
+						Without them programming language can’t be called object-oriented
+						</textarea>
+					</section>
+					<section data-markdown>
+							<textarea data-template>
+								## Encapsulation
+								The idea of encapsulation is that implementation details
+								should not be visible to end users.
+								The only way to access these class properties would be
+								through public accessor methods of that class.
+							</textarea>
+					</section>
+					<section data-markdown>
+							<textarea data-template>
+								## Inheritance
+								Objects in the real world are often very similar.
+								They share many of attributes and behaviors.
+								Inheritance allows you to extract these shared attributes
+								and behaviors into a separate class.
+								This helps you avoid writing the same code over again and again.
+							</textarea>
+					</section>
+					<section data-markdown>
+							<textarea data-template>
+								## Polymorphism
+								The word “polymorphism” means having “many forms” or “shapes”.
+								Polymorphism gives a way to use a class exactly like its parent so
+								there’s no confusion with mixing types. But each child class keeps
+								its own methods as they are.
+							</textarea>
+					</section>
+					<section data-markdown>
+							<textarea data-template>
+								## Abstraction
+								The idea behind this principle is that the outside world should be provided
+								with only essential information about an object. It should provide only
+								information relevant for using it. It should not provide information about
+								implementation details of this object.
+							</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## How this works in JS
+							Enough  theory lets have some code and fun
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## What is JS?
+							JavaScript isn't a classed-based language – it's is a prototype-based language.
+					 	</textarea>
+					</section>
+						<section data-markdown>
+							<script type="text/template">
+								A prototype-based language has the notion of a prototypical object, an object used
+								as a template from which to get the initial properties for a new object.
+
+								![Sample image](https://learn.javascript.ru/article/native-prototypes/native-prototypes-array-tostring.svg)
+							</script>
+						</section>
+						<section data-markdown>
+						<textarea data-template>
+							## But i can create classes in JS!
+							Classes are a template for creating objects.
+							They encapsulate data with code to work on that data.
+							Classes in JS are built on prototypes but also have some
+							syntax and semantics that are not shared with ES5 class-like semantics.
+						</textarea>
+						</section>
+						<section data-markdown>
+							 <textarea data-template>
+								 ## Just like that
+								```js [1-6]
+								class Rectangle {
+								  constructor(height, width) {
+									this.height = height;
+									this.width = width;
+								  }
+								}
+								```
+							  </textarea>
+						</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## Core principles in JS
+							I will use class notation, because it easier to understand.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Encapsulation in JS
+							  ```js [1-12]
+							  var person = function () {
+								  var fullName = "Jonathan Joestar";
+
+								  return {
+									setFullName : function (newValue) {
+										fullName = newValue;
+									  }
+									getFullName : function () {
+									 return fullName;
+									}
+								  };
+							};
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Inheritance in JS
+							```js [1-17]
+							class Person {
+								constructor(name) {
+							      this.name = name;
+								}
+								say() {
+							      console.log(this.name)
+							   }
+							}
+
+							class Worker extends Person {
+							   constructor(name) {
+							      super(name)
+							   }
+							   work() {
+							    console.log(`${this.name} is working`)
+							   }
+							}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Polymorphism in JS
+							```js [1-17]
+							class Worker extends Person {
+							   constructor(name) {
+							      super(name)
+							   }
+							   say() {
+							    console.log(`${this.name} is worker`)
+							   }
+
+							class Writer extends Person {
+							   constructor(name) {
+							      super(name)
+							   }
+							   say() {
+							    console.log(`${this.name} is writing`)
+							   }
+							}
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Abstraction in JS
+							```js [1-17]
+							export interface ImageCategory {
+  type: string;
+  images: string[];
+}
+							```
+						</textarea>
+					</section>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						##  That's all
+						Thx for watching
+					</textarea>
+				</section>
 			</div>
 		</div>
 
